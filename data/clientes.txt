@@ -1,0 +1,5 @@
+Numero de Clientes: 4
+Nome: Cliente1 id: 2 NIF: 123456789 Email: client1@ufp.edu.pt
+Nome: Cliente2 id: 3 NIF: 112345678 Email: client2@ufp.edu.pt
+Nome: Cliente3 id: 4 NIF: 111234567 Email: client3@ufp.edu.pt
+Nome: Ruben id: 1 NIF: 232928185 Email: ruben@ufp.edu.pt

@@ -1,0 +1,11 @@
+#ifndef PORTOPONTOS_GENERICALGORITHM_H
+#define PORTOPONTOS_GENERICALGORITHM_H
+
+#include "structs.h"
+
+int main_generic();
+
+int dist(COORDENADAS x1, COORDENADAS y1, COORDENADAS x2, COORDENADAS y2);
+int aptidao(int T);
+
+#endif //PORTOPONTOS_GENERICALGORITHM_H
