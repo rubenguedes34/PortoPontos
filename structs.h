@@ -26,13 +26,13 @@ typedef struct cidades{
     char *nome;
     char descricao;
     COORDENADAS coordenadas;
-    Pol *pontos;    // lista pontos interesse
+    Pol *pontosInteresse;    // lista pontos interesse
     struct cidades *pnext;
 }CIDADES;
 
 typedef struct classcidade{
     CIDADES *pointercid;
-    int total;
+    int totalcidades;
 }CLASSCIDADES;
 
 ////////////////////////     VIAGENS    ////////////////////////
@@ -73,7 +73,7 @@ typedef struct cliente{
     int NIF;
     char *email;
     H_Clientes hclientes;
-    struct cliente *pnext; //LL
+    struct cliente *pnext; //LL clientes
 }CLIENTE;
 
 typedef struct classcliente{

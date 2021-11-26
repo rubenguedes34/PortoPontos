@@ -76,8 +76,7 @@ void print_cliente(CLASSCLIENTE pcs){
  * @param pcs
  * @param name
  */
-void remove_cliente_byname(CLASSCLIENTE *pcs, char name[])    //Ordered
-{
+void remove_cliente_byname(CLASSCLIENTE *pcs, char name[]){    //Ordered
     if (pcs->pointerc == NULL) { // Empty
         return;
     }

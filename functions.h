@@ -32,17 +32,22 @@ void relatorio(DYN_ARRAY_VIAGENS *viag,CLASSCLIENTE *cli, DATA d1, DATA d2);
 
 
 /////////////////////////////////    Cidades     /////////////////////////////////
-void insert_cidades(CIDADES *pcs,int id,int name,char desc,COORDENADAS cord,Pol pol);
-void edit_cidades(CIDADES *pcs,int id,int name,char desc,COORDENADAS cord,Pol pol);
-void remove_cidades(CIDADES *pcs,int id);
+void insert_cidades_ordered(CLASSCIDADES *pcs,int id,int name,char desc,float latitude,float longitude,char pontosInt[]);
+void edit_cidades(CLASSCIDADES *pcs,int id,int name,char novadesc,float x,float y,char pontos[]);
+void remove_cidades_nome(CLASSCIDADES *pcs,char nome[]);
+void print_cidades(CLASSCIDADES pcs);
+CIDADES * find_cidade_nome(CLASSCIDADES pcs,char nome[]);
+CIDADES * find_cidade_ID(CLASSCIDADES pcs, int id);
+CIDADES * edit_descricao_cidade(CLASSCIDADES *pcs,char newdesc);
+
+//CIDADES *find_cidade_descricao(CLASSCIDADES *pcs,int id,char desc);
+
+//Files
 void save_cidades_txt(CLASSCIDADES pcs, char filename[]);
 void read_cidades_txt(CLASSCIDADES *pcs, char filename[]);
 void save_cidades_bin(CLASSCIDADES pcs, char filename[]);
 void read_cidades_bin(CLASSCIDADES *pcs, char filename[]);
 
-CIDADES *find_cidade(CLASSCIDADES *pcs,int id);
-CIDADES *find_cidade_descricao(CLASSCIDADES *pcs,int id,char desc);
-void edit_descricao_cidade(CIDADES *pcs,int id,char newdesc);
 Pol *create_pol(CIDADES *pcs,int id,Pol pol);
 Pol *remove_pol(CIDADES *pcs,int id,Pol pol);
 Pol *find_pol(CIDADES *pcs,int id,Pol pol);

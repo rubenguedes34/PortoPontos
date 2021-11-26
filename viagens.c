@@ -17,7 +17,7 @@ void insert_viagens_dyn_array(CLASSVIAGENS *pcs,CIDADES cidadesvisitadas[],DATA 
 
     int i;
     VIAGENS *viag=pcs->pointerviag;
-    viag->arrayviagens=(DYN_ARRAY_VIAGENS*)calloc(3, sizeof(DYN_ARRAY_VIAGENS));
+    viag->arrayviagens=(VIAGENS *)calloc(3, sizeof(VIAGENS));   //dyn array
 
     //caso seja a primeira viagem a ser inserida
     if(pcs->totalviagens==0){
