@@ -178,8 +178,59 @@ void read_cidades_txt(CLASSCIDADES *pcs, char filename[]){
     }
     fclose(fp);
 }
-void save_cidades_bin(CLASSCIDADES pcs, char filename[]);
-void read_cidades_bin(CLASSCIDADES *pcs, char filename[]);
 
+
+void save_cidades_bin(CLASSCIDADES pcs, char filename[]){
+    FILE *fp=NULL;
+    if((fp=fopen(filename,"wb"))==NULL){
+        printf("Erro ao guardar o Ficheiro\n");
+        return;
+    }
+
+    fwrite(&pcs.totalcidades,sizeof(int),1,fp);
+    CIDADES *cid=pcs.pointercid;
+    for(int i=0;i<pcs.totalcidades;i++) {
+        int size_nome=strlen(cid->nome)+1;// tamanho de nome  +1
+        fwrite(&size_nome, sizeof(int), 1, fp);   // tamanho de nome
+        fwrite(cid->nome, sizeof(char), size_nome, fp);//escreve nome
+        fwrite(&(cid->ID), sizeof(int), 1, fp);//escrece ID
+        int size=strlen(cid->descricao)+1;// tamanho de descricao  +1
+        fwrite(&size,sizeof(char),1,fp);//ler tamanho descricao
+        fwrite((cid->descricao), sizeof(char), size, fp);//escreve descricao
+        fwrite(&(cid->coordenadas.x), sizeof(float),1,fp); //latitude
+        fwrite(&(cid->coordenadas.y), sizeof(float),1,fp); //longitude
+        fwrite((cid->pontosInteresse), sizeof(char),size,fp);    //Lista pontos interesse
+        cid=cid->pnext;
+    }
+    fclose(fp);
+}
+
+
+void read_cidades_bin(CLASSCIDADES *pcs, char filename[]){
+    FILE *fp=NULL;
+    if((fp=fopen(filename,"rb"))==NULL){
+        printf("Erro ao guardar o Ficheiro\n");
+        return;
+    }
+    int total_cidades=0,id_cidade=0,size_nome=0,size=0;
+    float latitude=0.0f,longitude=0.0f;
+    char nome_cidade[100];
+    char descricao_cliente[50];
+    char lista_pontos[50];
+    fread(&total_cidades,sizeof(int),1,fp);
+    for (int i = 0; i < total_cidades; i++) {
+        fread(&size_nome,sizeof(int),1,fp);//ler tamanho nome
+        fread(nome_cidade,sizeof(char),size_nome,fp);//ler nome
+        fread(&id_cidade,sizeof(int),1,fp);//le id cidade
+        fread(&size,sizeof(char),1,fp);//ler tamanho descricao
+        fread(descricao_cliente,sizeof(char),size,fp);//le descricao cidade
+        fread(&latitude,sizeof(float),1,fp);//le latitude cidade
+        fread(&longitude,sizeof(float),1,fp);//le longitude cidade
+        fread(lista_pontos,sizeof(char),size,fp);//le lista pontos interesse cidade
+        insert_cidades_ordered(pcs,id_cidade,nome_cidade,descricao_cliente,latitude,longitude,lista_pontos);
+    }
+
+    fclose(fp);
+}
 
 
