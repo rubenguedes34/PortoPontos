@@ -5,16 +5,18 @@
 /////////////////////////////////////////////////       Cidades        ////////////////////////////////////////////////
 char ficheiro_cidades[]="cidades.txt";
 
-void insert_cidades_ordered(CLASSCIDADES *pcs,int id,int name,char desc,float latitude,float longitude,char pontosInt[]){
+void insert_cidades_ordered(CLASSCIDADES *pcs,int id,char name[],char desc[],float latitude,float longitude,Pol pontosInt[]){
 
-    CIDADES *new=(CIDADES*) malloc(sizeof(CIDADES));
-    new->nome=(char*)malloc(sizeof(char)*(strlen(name)+1));
-    strcpy(new->nome,name);
+    CIDADES *new=(CIDADES*)malloc(sizeof(CIDADES));
     new->ID=id;
+    new->nome=(char*)malloc(sizeof(char));
+    strcpy(new->nome,name);
+    new->descricao=(char*)malloc(sizeof(char));
+    strcpy(new->descricao,desc);
     new->coordenadas.x=latitude;
-    new->coordenadas.y=longitude;
-    new->pontosInteresse=(char*)malloc(sizeof(char));
-    strcpy(new->pontosInteresse,pontosInt);
+    /*new->coordenadas.y=longitude;
+    new->pontosInteresse=(Pol*)malloc(sizeof(Pol));
+    strcpy(new->pontosInteresse,pontosInt); */
     new->pnext=NULL;
 
 
@@ -44,7 +46,6 @@ void insert_cidades_ordered(CLASSCIDADES *pcs,int id,int name,char desc,float la
 ///////////////////////////////
 
     //case3 tail
-
     if(pcurrent==NULL){
         pand->pnext=new;
         return;
@@ -122,16 +123,17 @@ void remove_cidades_nome(CLASSCIDADES *pcs,char nome[]){
 
 void print_cidades(CLASSCIDADES pcs){
     CIDADES *cid=pcs.pointercid;
-    if (pcs.pointercid == NULL && pcs.totalcidades==0){     //não existem cidades
-        printf("Nao existem cidades inseridas!!\n");
+    if (cid == NULL && pcs.totalcidades==0){     //não existem cidades
+        //printf("Numero de cidades:%d\n", pcs.totalcidades);
+        printf("Nao existem cidades inseridas!!\n\n");
     }
     else {                                                  //print dados cidade
-        //printf("\tNumero de cidades:%d\n", pcs.totalcidades);
+        printf("\tNumero de cidades:%d\n", pcs.totalcidades);
         while (cid != NULL) {
-            printf("Nome cidade:%s\n", cid->nome);
             printf("Id:%d\n", cid->ID);
+            printf("Nome cidade:%s\n", cid->nome);
             printf("Descricao:%s\n",cid->descricao);
-            printf("Coordenadas: %f %f\n",cid->coordenadas.x,cid->coordenadas.y);
+            printf("[Coordenadas]Latitude: %f Longitude: %f\n",cid->coordenadas.x,cid->coordenadas.y);
             printf("Pontos de Interesse:%s\n",cid->pontosInteresse);
             cid=cid->pnext;
         }
@@ -212,6 +214,7 @@ void read_cidades_bin(CLASSCIDADES *pcs, char filename[]){
         printf("Erro ao guardar o Ficheiro\n");
         return;
     }
+
     int total_cidades=0,id_cidade=0,size_nome=0,size=0;
     float latitude=0.0f,longitude=0.0f;
     char nome_cidade[100];
@@ -229,7 +232,6 @@ void read_cidades_bin(CLASSCIDADES *pcs, char filename[]){
         fread(lista_pontos,sizeof(char),size,fp);//le lista pontos interesse cidade
         insert_cidades_ordered(pcs,id_cidade,nome_cidade,descricao_cliente,latitude,longitude,lista_pontos);
     }
-
     fclose(fp);
 }
 

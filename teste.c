@@ -3,15 +3,16 @@
 
 CLASSCLIENTE clt = { NULL, 0};
 CLASSVIAGENS viag = {NULL,0};
+CLASSCIDADES cid = {NULL,0};
 
 void teste_clientes(){
 
     //inserir cliente
-    //insert_cliente_ordered(&clt,"Ruben",1,232928185,"ruben@ufp.edu.pt");
+    insert_cliente_ordered(&clt,"Ruben",1,232928185,"ruben@ufp.edu.pt");
     //insert_cliente_ordered(&clt,"Cliente1",2,123456789,"client1@ufp.edu.pt");
     //insert_cliente_ordered(&clt,"Cliente2",3,112345678,"client2@ufp.edu.pt");
     //insert_cliente_ordered(&clt,"Cliente3",4,111234567,"client3@ufp.edu.pt");
-    //print_cliente(clt);
+    print_cliente(clt);
 
     //remoção cliente
     //printf("---------------------\n");
@@ -55,5 +56,11 @@ void teste_viagens(){
 }
 
 void teste_cidades(){
+
+    char descricao_cidade1[]="Cidade Rural com cerca de mil habitantes e diversos pontos";
+    char pontosInteresse_cidade1[]="Monumento1";
+
+    insert_cidades_ordered(&cid,1,"Cidade1",descricao_cidade1,1.0f,0.0f,NULL);
+    print_cidades(cid);
 
 }

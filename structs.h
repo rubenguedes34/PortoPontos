@@ -24,7 +24,7 @@ typedef struct pontos_interesse{
 typedef struct cidades{
     int ID;
     char *nome;
-    char descricao;
+    char *descricao;
     COORDENADAS coordenadas;
     Pol *pontosInteresse;    // lista pontos interesse
     struct cidades *pnext;

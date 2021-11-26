@@ -32,7 +32,7 @@ void relatorio(DYN_ARRAY_VIAGENS *viag,CLASSCLIENTE *cli, DATA d1, DATA d2);
 
 
 /////////////////////////////////    Cidades     /////////////////////////////////
-void insert_cidades_ordered(CLASSCIDADES *pcs,int id,int name,char desc,float latitude,float longitude,char pontosInt[]);
+void insert_cidades_ordered(CLASSCIDADES *pcs,int id,char name[],char desc[],float latitude,float longitude,Pol pontosInt[]);
 void edit_cidades(CLASSCIDADES *pcs,int id,int name,char novadesc,float x,float y,char pontos[]);
 void remove_cidades_nome(CLASSCIDADES *pcs,char nome[]);
 void print_cidades(CLASSCIDADES pcs);
