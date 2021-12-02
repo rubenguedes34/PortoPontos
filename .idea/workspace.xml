@@ -18,9 +18,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cidades.c" beforeDir="false" afterPath="$PROJECT_DIR$/cidades.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.h" beforeDir="false" afterPath="$PROJECT_DIR$/functions.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structs.h" beforeDir="false" afterPath="$PROJECT_DIR$/structs.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teste.c" beforeDir="false" afterPath="$PROJECT_DIR$/teste.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viagens.c" beforeDir="false" afterPath="$PROJECT_DIR$/viagens.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +61,9 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -93,6 +93,8 @@
       <workItem from="1637879882357" duration="2360000" />
       <workItem from="1637948981187" duration="1089000" />
       <workItem from="1637950091082" duration="2290000" />
+      <workItem from="1638213491282" duration="314000" />
+      <workItem from="1638445111965" duration="3314000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1637875552518</created>
@@ -129,17 +131,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Second commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second commit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/cidades.c</url>
-          <line>9</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="insert cidades working&#10;print cidade not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="insert cidades working&#10;print cidade not working" />
   </component>
 </project>

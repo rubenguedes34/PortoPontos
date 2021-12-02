@@ -18,17 +18,20 @@ CLIENTE *find_historico_pol(CLASSCLIENTE *pcs,H_Clientes hist);                 
 
 
 /////////////////////////////////     Viagens     /////////////////////////////////
-void insert_viagens_dyn_array(CLASSVIAGENS *pcs,CIDADES cidadesvisitada[],DATA date,int id,char nomeviag[]);
+void create_dynarray_classviagens(CLASSVIAGENS_DYNARRAY *pcs,int size);
+void insert_viagens_dyn_array(CLASSVIAGENS_DYNARRAY *pcs, CLASSVIAGENS_DYNARRAY cidadesvisitada[], DATA date, int id, char nomeviag[]);
 void edit_viagens(VIAGENS *pcs,int id,DATA date);                                 //###
 void remove_viagens(VIAGENS *pcs,int id);
-void print_viagens_dyn_array(CLASSVIAGENS pcs);
-//Files
-void save_viagens_txt(CLASSVIAGENS pcs, char filename[]);
-void read_viagens_txt(CLASSVIAGENS *pcs, char filename[]);
-void save_viagens_bin(CLASSVIAGENS pcs, char filename[]);
-void read_viagens_bin(CLASSVIAGENS *pcs, char filename[]);
+void print_viagens_dyn_array(CLASSVIAGENS_DYNARRAY pcs);
 
-void relatorio(DYN_ARRAY_VIAGENS *viag,CLASSCLIENTE *cli, DATA d1, DATA d2);
+
+//Files
+void save_viagens_txt(CLASSVIAGENS_DYNARRAY pcs, char filename[]);
+void read_viagens_txt(CLASSVIAGENS_DYNARRAY *pcs, char filename[]);
+void save_viagens_bin(CLASSVIAGENS_DYNARRAY pcs, char filename[]);
+void read_viagens_bin(CLASSVIAGENS_DYNARRAY *pcs, char filename[]);
+
+//void relatorio(DYN_ARRAY_VIAGENS *viag,CLASSCLIENTE *cli, DATA d1, DATA d2);
 
 
 /////////////////////////////////    Cidades     /////////////////////////////////

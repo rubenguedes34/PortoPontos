@@ -14,8 +14,8 @@ void insert_cidades_ordered(CLASSCIDADES *pcs,int id,char name[],char desc[],flo
     new->descricao=(char*)malloc(sizeof(char));
     strcpy(new->descricao,desc);
     new->coordenadas.x=latitude;
-    /*new->coordenadas.y=longitude;
-    new->pontosInteresse=(Pol*)malloc(sizeof(Pol));
+    new->coordenadas.y=longitude;
+    /*new->pontosInteresse=(Pol*)malloc(sizeof(Pol));
     strcpy(new->pontosInteresse,pontosInt); */
     new->pnext=NULL;
 
@@ -123,18 +123,17 @@ void remove_cidades_nome(CLASSCIDADES *pcs,char nome[]){
 
 void print_cidades(CLASSCIDADES pcs){
     CIDADES *cid=pcs.pointercid;
-    if (cid == NULL && pcs.totalcidades==0){     //não existem cidades
-        //printf("Numero de cidades:%d\n", pcs.totalcidades);
+    if (pcs.pointercid == NULL && pcs.totalcidades==0){     //não existem cidades
         printf("Nao existem cidades inseridas!!\n\n");
     }
-    else {                                                  //print dados cidade
+    else {
         printf("\tNumero de cidades:%d\n", pcs.totalcidades);
-        while (cid != NULL) {
+        for (int i = 0; i < pcs.totalcidades; i++) {
             printf("Id:%d\n", cid->ID);
             printf("Nome cidade:%s\n", cid->nome);
             printf("Descricao:%s\n",cid->descricao);
             printf("[Coordenadas]Latitude: %f Longitude: %f\n",cid->coordenadas.x,cid->coordenadas.y);
-            printf("Pontos de Interesse:%s\n",cid->pontosInteresse);
+            //printf("Pontos de Interesse:%s\n",cid->pontosInteresse);
             cid=cid->pnext;
         }
     }

@@ -2,17 +2,17 @@
 #include <stdio.h>
 
 CLASSCLIENTE clt = { NULL, 0};
-CLASSVIAGENS viag = {NULL,0};
+CLASSVIAGENS_DYNARRAY viag={.pointerviag=NULL,.current_viagem=0,.totalviagens=0,.viagens_porRealizar=0,.viagens_realizadas=0};
 CLASSCIDADES cid = {NULL,0};
 
 void teste_clientes(){
 
     //inserir cliente
-    insert_cliente_ordered(&clt,"Ruben",1,232928185,"ruben@ufp.edu.pt");
+    //insert_cliente_ordered(&clt,"Ruben",1,232928185,"ruben@ufp.edu.pt");
     //insert_cliente_ordered(&clt,"Cliente1",2,123456789,"client1@ufp.edu.pt");
     //insert_cliente_ordered(&clt,"Cliente2",3,112345678,"client2@ufp.edu.pt");
     //insert_cliente_ordered(&clt,"Cliente3",4,111234567,"client3@ufp.edu.pt");
-    print_cliente(clt);
+    //print_cliente(clt);
 
     //remoção cliente
     //printf("---------------------\n");
@@ -40,18 +40,13 @@ void teste_viagens(){
     DATA dt3={22,11,2021};
     DATA dt4={23,11,2021};
 
-    CIDADES C0 = {.ID=0, .coordenadas.x=1.0, .coordenadas.y=0.0};
-    CIDADES C1 = {.ID=1, .coordenadas.x=1.0, .coordenadas.y=1.0};
-    CIDADES C2 = {.ID=2, .coordenadas.x=2.0, .coordenadas.y=1.0};
-    CIDADES C3 = {.ID=3, .coordenadas.x=2.0, .coordenadas.y=0.0};
-    CIDADES C4 = {.ID=4, .coordenadas.x=3.0, .coordenadas.y=0.0};
-    CIDADES C5 = {.ID=5, .coordenadas.x=4.0, .coordenadas.y=1.0};
+    CLASSVIAGENS_DYNARRAY cidvis1={.name="Cidade1"};
+    CLASSVIAGENS_DYNARRAY cidvis2={.name="Cidade2"};
 
-    VIAGENS T0 = {.id=0, .cidades={0, 1, 2, 3, 4, 5}};
-    VIAGENS T1 = {.id=1, .cidades={0, 2, 3, 1, 5, 4}};    // Populacao inicial
-
-    //insert_viagens_dyn_array(&viag,&T1,dt1,1,"viagem1",1);
-    //print_viagens_dyn_array(viag);
+    create_dynarray_classviagens(&viag,2);
+    insert_viagens_dyn_array(&viag,&cidvis1,dt1,1,"Viagem1");
+    insert_viagens_dyn_array(&viag,&cidvis2,dt2,2,"Viagem2");
+    print_viagens_dyn_array(viag);
 
 }
 

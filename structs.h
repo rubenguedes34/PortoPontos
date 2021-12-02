@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define MAX200 200
 
 typedef struct data{
     int dia;
@@ -37,26 +38,22 @@ typedef struct classcidade{
 
 ////////////////////////     VIAGENS    ////////////////////////
 
-typedef struct dyn_array_viagens{
-    int size;
-    int *viagens_realizadas;
-    int *viagens_porRealizar;
-}DYN_ARRAY_VIAGENS;
-
 typedef struct viagens{
     int id;
-    char *nomeviagem;
-    int aptidao;
+    char *pnomeviagem;
     CIDADES cidades;
     DATA dataviagem;
-    DYN_ARRAY_VIAGENS *arrayviagens;
-    struct viagens *pnext;
+    //struct viagens *pnext;
 }VIAGENS;
 
 typedef struct classviagens{
+    char name[MAX200];
     VIAGENS *pointerviag;
-    int totalviagens;
-}CLASSVIAGENS;
+    int totalviagens;   //size
+    int current_viagem;
+    int *viagens_realizadas;
+    int *viagens_porRealizar;
+}CLASSVIAGENS_DYNARRAY;
 
 ////////////////////////     CLIENTES    ////////////////////////
 
