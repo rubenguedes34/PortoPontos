@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "structs.h"
 
 /**
  *   Solução -> Diminuir o trajeto entre todos os locais a visitar
@@ -13,7 +12,9 @@
  *       Cada trajeto é representado por um array contendo IDs das cidades por ordem visita
  *       Cada trajeto calcula a distância total percorrida c/ distância entre cada par de locais vizinhos
  *
- *       População inicial é aleatória, escolher sequências de visita possiveis entre os locais a visitar usando permutações aleatórias
+ *       População inicial é aleatória,
+ *       A População Inicial de trajetos pode ser gerada de forma aleatória,ou seja,
+ *       escolhendo sequências de visita possíveis entre os vários locais a visitar usando permutações aleatórias.
  *
  *       Gene- cidade
  *       Individuo- trajeto
@@ -22,38 +23,31 @@
  *       Selecao
  *       Cruzamento
  *       Mutação
+ *
  */
 
-#define MAX 100
-#define N 6    // nº cidades
-#define P 10   // size população
+#define MAX100 100
+//#define N 6    // nº cidades
+//#define P 6   // size população
 #define Q 0.01 // probabilidade mutação
 #define E 0    // nº individuos que passam por elitismo
-#define G 0    // nº gerações
+//#define G 0    // nº gerações
 
 
-int main_generic() {
 
+int main_generic(int N, int P, int G){
 
-    int populacao[MAX][MAX];
-    int trajeto[MAX];
+    int populacao[MAX100][MAX100];
+    int trajeto[MAX100];
 
-    int distancias[MAX][MAX]; //Matriz quadrada com distâncias euclidianas,pré-calculadas,
+    int distancias[MAX100][MAX100]; //Matriz quadrada com distâncias euclidianas,pré-calculadas,
     // entre pares de cidades
 
-    char **currentGeneration, **nextGeneration; // globals
 
-    currentGeneration = (char **) malloc(sizeof(char *) * P);
-    nextGeneration = (char **) malloc(sizeof(char *) * P);
-
-    for (int i = 0; i < G; i++) {
-
-        for (int pop = 0; pop < P; pop++) {
-
-        }
+    //CIDADES *cidT1={.ID=0,.ID=1,.ID=2,.ID=3,.ID=4,.ID=5};
+    //TRAJETO T1={1,cidT1,0};
 
 
-    }
 
 }
 
@@ -71,5 +65,55 @@ int aptidao(int T) {
     dist(C2.coordenadas.x,C2.coordenadas.y,C3.coordenadas.x,C3.coordenadas.y)+ dist(C3.coordenadas.x,C3.coordenadas.y,C4.coordenadas.x,C4.coordenadas.y)
     + dist(C4.coordenadas.x,C4.coordenadas.y,C5.coordenadas.x,C5.coordenadas.y)+ dist(C5.coordenadas.x,C5.coordenadas.y,C0.coordenadas.x,C0.coordenadas.y) ); */
 
+}
 
+
+//1º criar população(sabendo set cidades a visitar)
+//      = gerar N individuos com genes ordenados de forma random
+//       == gerar N Trajetos com ID's de cidades ordenados de forma random
+//          Cada trajeto é representado por um array contendo IDs das cidades por ordem visita
+
+/*void create_trajeto(int name, int size){    //array com IDs das cidades
+    double *arrays[10];
+
+    for (int i = 0; i < 6; i++)
+        arrays[i] = malloc(size * sizeof(double));
+
+} */
+
+void create_initialpop(TRAJETO t,VIAGENS cid_a_visitar){
+
+    int i, size;
+
+    for ( i=0; i< 6; i++){
+    }
+
+
+}
+
+
+
+
+void shuffle_array(int a[], int n){
+    if (n > 1)
+    {
+        int i;
+        for (i = 0; i < n - 1; i++)
+        {
+            size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
+            int t = a[j];
+            a[j] = a[i];
+            a[i] = t;
+        }
+    }
+}
+
+void print_matrix_ints(int mNx100[][MAX100], int lines, int columns){
+
+    for (int lin = 0; lin < lines; lin++) {
+        for (int col = 0; col < columns; col++) {
+            printf("%d", mNx100[lines][columns]);
+        }
+        printf("\n");
+    }
 }

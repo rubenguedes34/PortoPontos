@@ -2,9 +2,9 @@
 
 int main() {
 
-    //teste_clientes();
+    teste_clientes();
     //teste_viagens();
-    teste_cidades();
+    //teste_cidades();
 
     return 0;
 }

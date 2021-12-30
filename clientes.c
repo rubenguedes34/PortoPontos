@@ -11,47 +11,48 @@ char ficheiro_clientes[]="clientes.txt";
  * @param name
  * @param id
  */
-void insert_cliente_ordered(CLASSCLIENTE *pcs, char name[], int id, int NIF, char email[]){
-    CLIENTE *new=(CLIENTE*)malloc(sizeof(CLIENTE)) ;
-    new->nome=(char*)malloc(sizeof(char)*(strlen(name)+1));
-    strcpy(new->nome,name);
-    new->id=id;
-    new->NIF=NIF;
-    new->email=(char*)malloc(sizeof(char)*(strlen(email))+1);
-    strcpy(new->email,email);
-    new->pnext=NULL;
+void insert_cliente_ordered(CLASSCLIENTE *pcs, char name[], int id, int NIF, char email[]) {
+    //Consider the 4 possibilities: Queue is empty, insert head, insert tail, insert in the middle
+    CLIENTE *new = (CLIENTE *) malloc(sizeof(CLIENTE));
+    new->id = id;
+    new->nome = (char *) malloc(sizeof(char) * (strlen(name) + 1));
+    strcpy(new->nome, name);
+    new->NIF = NIF;
+    new->email = (char *) malloc(sizeof(char) * (strlen(email)) + 1);
+    strcpy(new->email, email);
+    new->pnext = NULL;
 
-//case1 First
-    if(pcs->pointerc==NULL||pcs->totalclientes==0){
-        pcs->pointerc=new;
+    //1st case, Empty List
+    if (pcs->pointerc == NULL || pcs->totalclientes == 0) {
+        pcs->pointerc = new;
         pcs->totalclientes++;
         return;
     }
 
-//case2 head
-    CLIENTE *pcurrent=pcs->pointerc,*pand=NULL;
-    while(pcurrent!=NULL && strcmp(name,pcurrent->nome)>0){
-        pand=pcurrent;
-        pcurrent=pcurrent->pnext;
+    //2nd case, Head + Tail + Middle with if's to check which is what
+    CLIENTE *pcurrent = pcs->pointerc, *pand = NULL;
+    while (pcurrent != NULL && strcmp(name, pcurrent->nome) > 0) {
+        pand = pcurrent;
+        pcurrent = pcurrent->pnext;
     }
-    if(pcurrent==pcs->pointerc){
-        new->pnext=pcurrent;
-        pcs->pointerc=new;
+    if (pcurrent == pcs->pointerc) {      // Head insertion
+        //printf("Inserindo na head\n");
+        new->pnext = pcurrent;
+        pcs->pointerc = new;
         pcs->totalclientes++;
         return;
     }
-//head e tail no mesmo
-    pand->pnext=new;
-    new->pnext=pcurrent;
+    if (pcurrent == NULL) {           // Tail insertion
+        // é o ultimo pois aponta para NULL
+        //printf("Inserindo na tail\n");
+        pand->pnext = new;
+        pcs->totalclientes++;
+        return;
+    }                              // Middle
+    //printf("Inserindo no middle\n");
+    new->pnext = pcurrent;
+    pand->pnext = new;
     pcs->totalclientes++;
-///////////////////////////////
-
-//case3 tail
-
-    if(pcurrent==NULL){
-        pand->pnext=new;
-        return;
-    }
 
 }
 
@@ -66,7 +67,7 @@ void print_cliente(CLASSCLIENTE pcs){
         printf("Nome:%s\n",pcurrent->nome);
         printf("Id:%d\n",pcurrent->id);
         printf("NIF:%d\n",pcurrent->NIF);
-        printf("Email:%s\n",pcurrent->email);
+        printf("Email:%s\n\n",pcurrent->email);
         pcurrent=pcurrent->pnext;
     }
 }
@@ -115,6 +116,7 @@ CLIENTE *find_cliente_id(CLASSCLIENTE *pcs, int id) {
     }
     return pcurrent;
 }
+
 
 /**
  * Função guardar clientes no ficheiro txt
@@ -179,9 +181,9 @@ void save_cliente_bin(CLASSCLIENTE pcs, char filename[]){
     //fwrite(&size,sizeof(int),1,fp); //guardar size
     CLIENTE *cl = pcs.pointerc;
     for(int i=0;i<pcs.totalclientes;i++) {
-        int size=strlen(cl->nome)+1;// tamanho de nome  +1
-        fwrite(&size, sizeof(int), 1, fp);   // tamanho de nome
-        fwrite(cl->nome, sizeof(char), size, fp);//escreve nome
+        int size=strlen(cl->nome)+1;// tamanho de pnomeviagem  +1
+        fwrite(&size, sizeof(int), 1, fp);   // tamanho de pnomeviagem
+        fwrite(cl->nome, sizeof(char), size, fp);//escreve pnomeviagem
         fwrite(&(cl->id), sizeof(int), 1, fp);//escrece id
         fwrite(&(cl->NIF), sizeof(int), 1, fp);//escreve nif
         fwrite((cl->email), sizeof(char), size + 20, fp);//escreve email
@@ -195,7 +197,7 @@ void save_cliente_bin(CLASSCLIENTE pcs, char filename[]){
  * @param pcs
  * @param filename
  */
-void read_cliente_bin(CLASSCLIENTE *pcs, char filename[]){          //not working yet
+void read_cliente_bin(CLASSCLIENTE *pcs, char filename[]){
     FILE *fp=NULL;
     if((fp=fopen(filename,"rb"))==NULL){
         printf("Erro ao guardar o Ficheiro\n");
@@ -206,8 +208,8 @@ void read_cliente_bin(CLASSCLIENTE *pcs, char filename[]){          //not workin
     char email_cliente[50];
     fread(&total_cliente,sizeof(int),1,fp);
     for (int i = 0; i < total_cliente; i++) {
-        fread(&size,sizeof(int),1,fp);//ler tamanho nome
-        fread(nome_cliente,sizeof(char),size,fp);//ler nome
+        fread(&size,sizeof(int),1,fp);//ler tamanho pnomeviagem
+        fread(nome_cliente,sizeof(char),size,fp);//ler pnomeviagem
         fread(&id_cliente,sizeof(int),1,fp);//le id  cliente
         fread(&nif_cliente,sizeof(int),1,fp);//le nif  cliente
         fread(email_cliente,sizeof(char),size + 20,fp);//le email  cliente
@@ -217,11 +219,59 @@ void read_cliente_bin(CLASSCLIENTE *pcs, char filename[]){          //not workin
     fclose(fp);
 }
 
+void insert_historico(CLASSCLIENTE *pcl, int id_cliente, VIAGENS viagem_realizada[], DATA d_fim){
+    CLIENTE *ccliente=pcl->pointerc;
+    while (ccliente->id != id_cliente){      // ccliente not found yet
+        ccliente=ccliente->pnext;
+    }
+
+    H_Clientes *hist=(H_Clientes*)malloc(sizeof(H_Clientes));
+    hist->viagem=(VIAGENS*) malloc(sizeof (VIAGENS));
+    //hist->data_inicio=d_inicio;
+    hist->data_fim=d_fim;
+    //hist->pontos=pontosInt;
+    hist->pnext=NULL;
+
+    //CLIENTE *ccliente= find_cliente_id(pcl,id_cliente);
+
+    //1st case, Empty List
+    if (ccliente->hclientes->pointerhc == NULL || ccliente->hclientes->nr_Historicos == 0) {
+        ccliente->hclientes->pointerhc=hist;
+        ccliente->hclientes->nr_Historicos++;
+        return;
+    }
+
+    H_Clientes *ant=NULL;
+    H_Clientes *atual=ccliente->hclientes->pointerhc;
+
+    while (atual != NULL){
+        ant=atual;
+        atual=atual->pnext;
+    }
+    ant->pnext=hist;
+    hist->pnext=atual;
+    ccliente->hclientes->nr_Historicos++;
+
+}
+
+void print_historico(CLASSCLIENTE cc, int id_cliente) {
+    CLIENTE *cli = find_cliente_id(&cc,id_cliente);
+    H_Clientes *paux=cli->hclientes->pointerhc;
+    while (paux != NULL) {
+        printf("Historico do cliente: %d\n",id_cliente);
+        printf("Nome da Viagem: %s\n",paux->viagem->pnomeviagem);
+        printf("Cidades visitadas: %s\n",paux->viagem->cidades_a_visitar);
+        printf("Data inicio da viagem: %d/%d/%d\n",paux->viagem->dataviagem.dia,paux->viagem->dataviagem.mes,paux->viagem->dataviagem.ano);
+        printf("Data fim da viagem: %d/%d/%d\n",paux->data_fim.dia,paux->data_fim.mes,paux->data_fim.ano);
+        //printf("Pontos Visitados: %s\n",paux->pontos);
+        paux = paux->pnext;
+    }
+}
+
 CLIENTE *find_historico_cidade(CLASSCLIENTE *pcs,H_Clientes hist,CIDADES cidade){
 
 }
 
 CLIENTE *find_historico_pol(CLASSCLIENTE *pcs,H_Clientes hist){
-
 
 }

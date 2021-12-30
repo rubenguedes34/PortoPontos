@@ -14,10 +14,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cead740-5c01-4994-bb7b-efe4e5abb7de" name="Default Changelist" comment="Second commit">
+    <list default="true" id="9cead740-5c01-4994-bb7b-efe4e5abb7de" name="Default Changelist" comment="Update Cidades e Viagens, not fully working yet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenericAlgorithm.c" beforeDir="false" afterPath="$PROJECT_DIR$/GenericAlgorithm.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenericAlgorithm.h" beforeDir="false" afterPath="$PROJECT_DIR$/GenericAlgorithm.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cidades.c" beforeDir="false" afterPath="$PROJECT_DIR$/cidades.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientes.c" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/clientes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/data/clientes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.h" beforeDir="false" afterPath="$PROJECT_DIR$/functions.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structs.h" beforeDir="false" afterPath="$PROJECT_DIR$/structs.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teste.c" beforeDir="false" afterPath="$PROJECT_DIR$/teste.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viagens.c" beforeDir="false" afterPath="$PROJECT_DIR$/viagens.c" afterDir="false" />
@@ -34,6 +39,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="20BRet0x3I4snvkdt2MvPFtbgJb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -47,13 +60,13 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PortoFlats" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LP_TP_2k21" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RunManager">
     <configuration name="PortoPontos" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PortoPontos" TARGET_NAME="PortoPontos" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PortoPontos" RUN_TARGET_NAME="PortoPontos">
@@ -94,7 +107,22 @@
       <workItem from="1637948981187" duration="1089000" />
       <workItem from="1637950091082" duration="2290000" />
       <workItem from="1638213491282" duration="314000" />
-      <workItem from="1638445111965" duration="3314000" />
+      <workItem from="1638445111965" duration="4412000" />
+      <workItem from="1638823412844" duration="600000" />
+      <workItem from="1639146040874" duration="783000" />
+      <workItem from="1639146865516" duration="4337000" />
+      <workItem from="1639151797846" duration="295000" />
+      <workItem from="1639152178221" duration="2371000" />
+      <workItem from="1639172598729" duration="4539000" />
+      <workItem from="1639245543984" duration="4125000" />
+      <workItem from="1639837757079" duration="4812000" />
+      <workItem from="1640619855498" duration="5770000" />
+      <workItem from="1640689318137" duration="11850000" />
+      <workItem from="1640705199717" duration="1619000" />
+      <workItem from="1640706850355" duration="12829000" />
+      <workItem from="1640793722563" duration="19437000" />
+      <workItem from="1640817332542" duration="2439000" />
+      <workItem from="1640874284708" duration="2000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1637875552518</created>
@@ -110,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637949005361</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update Cidades e Viagens, not fully working yet">
+      <created>1638448701376</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1638448701376</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +167,11 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Second commit" />
     <MESSAGE value="insert cidades working&#10;print cidade not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert cidades working&#10;print cidade not working" />
+    <MESSAGE value="Update Cidades e Viagens, not fully working yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Cidades e Viagens, not fully working yet" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
