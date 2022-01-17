@@ -2,32 +2,44 @@
 #define PORTOPONTOS_GENERICALGORITHM_H
 
 #include "structs.h"
+#include "functions.h"
 #define MAX100 100
+#define N 5  // nº cidades
+#define P 2   // size população inicial
+#define Q 0.01 // probabilidade mutação
+#define E 1    // nº individuos que passam por elitismo
+#define G 10   // nº gerações
 
-//Para isso devemos ir recolhendo numa lista ligada,informação ao longo da execução do AG
-// (e.g.Indivíduo mais apto(trajetória mais curta) e respectiva distância em cada geração).
 
 typedef struct trajetos{
     int idtrajeto;
-    CIDADES *cid;
+    int *trajeto;
+    CLASSVIAGENS_DYNARRAY cidades;
     float dist_total;
 }TRAJETO;
 
-typedef struct ll_geracoes{
+typedef struct geracoes{
     int idgeracao;
     int progenitores[MAX100][MAX100];
     int herdeiros[MAX100][MAX100];
     TRAJETO trajeto_mais_curto;
-    struct ll_geracoes *pnext;
+    struct geracoes *pnext;
 }GERACAO;
+
+typedef struct class_geracao{
+    GERACAO *pointerg;
+    int totalgeracoes;  //size
+}LL_GERACAO;
 
 
 int main_generic();
-void create_initialpop(TRAJETO t,VIAGENS cid_a_visitar);
+void create_initialpop(CLASSCLIENTE cc, char viagem[], int t1[N], int t2[N]);
+void shuffle_array(int arr[], int size);
+float dist(COORDENADAS c0, COORDENADAS c1);
+float aptidao(CLASSCLIENTE pcl,char viagem[],int trajeto[N]);
 
-int dist(COORDENADAS x1, COORDENADAS y1, COORDENADAS x2, COORDENADAS y2);
-int aptidao(int T);
-void shuffle_array(int a[], int n);
 void print_matrix_ints(int mNx100[][MAX100], int lines, int columns);
+void radixsort(int vetor[], int tamanho);
+void free_matrix(int m[MAX100][MAX100]);
 
 #endif //PORTOPONTOS_GENERICALGORITHM_H

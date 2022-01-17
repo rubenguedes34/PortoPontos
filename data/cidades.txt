@@ -1,3 +1,20 @@
-Numero de Cidades: 2 
-ID: 1, Nome: Cidade1, Descricao: Descricao Cidade1, Latitude: 2.000000, Longitude: 2.000000, Lista de Pontos Interesse: Pontos1
-ID: 2, Nome: Cidade2, Descricao: Descricao Cidade2, Latitude: 1.000000, Longitude: 0.000000, Lista de Pontos Interesse: Pontos2
+Viagem: Viagem1, Id: 1, Nome: Cidade1, Descricao: Descricao Cidade1, Latitude:1.000000, Longitude:1.000000, Pontos:PontosInteresse_cidade1
+Viagem: Viagem1, Id: 2, Nome: Cidade2, Descricao: Descricao Cidade2, Latitude:2.000000, Longitude:2.000000, Pontos:PontosInteresse_cidade2
+Viagem: Viagem1, Id: 3, Nome: Cidade3, Descricao: Descricao Cidade3, Latitude:3.000000, Longitude:3.000000, Pontos:PontosInteresse_cidade3
+Viagem: Viagem1, Id: 4, Nome: Cidade4, Descricao: Descricao Cidade4, Latitude:4.000000, Longitude:4.000000, Pontos:PontosInteresse_cidade4
+Viagem: Viagem1, Id: 5, Nome: Cidade5, Descricao: Descricao Cidade5, Latitude:5.000000, Longitude:5.000000, Pontos:PontosInteresse_cidade5
+Viagem: Viagem2, Id: 6, Nome: Cidade6, Descricao: Descricao Cidade6, Latitude:6.000000, Longitude:6.000000, Pontos:PontosInteresse_cidade6
+Viagem: Viagem2, Id: 7, Nome: Cidade7, Descricao: Descricao Cidade7, Latitude:7.000000, Longitude:7.000000, Pontos:PontosInteresse_cidade7
+Viagem: Viagem2, Id: 8, Nome: Cidade8, Descricao: Descricao Cidade8, Latitude:8.000000, Longitude:8.000000, Pontos:PontosInteresse_cidade8
+Viagem: Viagem2, Id: 9, Nome: Cidade9, Descricao: Descricao Cidade9, Latitude:9.000000, Longitude:9.000000, Pontos:PontosInteresse_cidade9
+Viagem: Viagem2, Id: 10, Nome: Cidade10, Descricao: Descricao Cidade10, Latitude:10.000000, Longitude:10.000000, Pontos:PontosInteresse_cidade10
+Viagem: Viagem3, Id: 11, Nome: Cidade11, Descricao: Descricao Cidade11, Latitude:11.000000, Longitude:11.000000, Pontos:PontosInteresse_cidade11
+Viagem: Viagem3, Id: 12, Nome: Cidade12, Descricao: Descricao Cidade12, Latitude:12.000000, Longitude:12.000000, Pontos:PontosInteresse_cidade12
+Viagem: Viagem3, Id: 13, Nome: Cidade13, Descricao: Descricao Cidade13, Latitude:13.000000, Longitude:13.000000, Pontos:PontosInteresse_cidade13
+Viagem: Viagem3, Id: 14, Nome: Cidade14, Descricao: Descricao Cidade14, Latitude:14.000000, Longitude:14.000000, Pontos:PontosInteresse_cidade14
+Viagem: Viagem3, Id: 15, Nome: Cidade15, Descricao: Descricao Cidade15, Latitude:15.000000, Longitude:15.000000, Pontos:PontosInteresse_cidade15
+Viagem: Viagem4, Id: 16, Nome: Cidade16, Descricao: Descricao Cidade16, Latitude:16.000000, Longitude:16.000000, Pontos:PontosInteresse_cidade16
+Viagem: Viagem4, Id: 17, Nome: Cidade17, Descricao: Descricao Cidade17, Latitude:17.000000, Longitude:17.000000, Pontos:PontosInteresse_cidade17
+Viagem: Viagem4, Id: 18, Nome: Cidade18, Descricao: Descricao Cidade18, Latitude:18.000000, Longitude:18.000000, Pontos:PontosInteresse_cidade18
+Viagem: Viagem4, Id: 19, Nome: Cidade19, Descricao: Descricao Cidade19, Latitude:19.000000, Longitude:19.000000, Pontos:PontosInteresse_cidade19
+Viagem: Viagem4, Id: 20, Nome: Cidade20, Descricao: Descricao Cidade20, Latitude:20.000000, Longitude:20.000000, Pontos:PontosInteresse_cidade20

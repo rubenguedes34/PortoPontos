@@ -14,13 +14,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cead740-5c01-4994-bb7b-efe4e5abb7de" name="Default Changelist" comment="Update Cidades e Viagens, not fully working yet">
+    <list default="true" id="9cead740-5c01-4994-bb7b-efe4e5abb7de" name="Default Changelist" comment="29.12">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GenericAlgorithm.c" beforeDir="false" afterPath="$PROJECT_DIR$/GenericAlgorithm.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GenericAlgorithm.h" beforeDir="false" afterPath="$PROJECT_DIR$/GenericAlgorithm.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cidades.c" beforeDir="false" afterPath="$PROJECT_DIR$/cidades.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientes.c" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cidades.bin" beforeDir="false" afterPath="$PROJECT_DIR$/data/cidades.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cidades.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/cidades.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/clientes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/data/clientes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/clientes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/clientes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/viagens.bin" beforeDir="false" afterPath="$PROJECT_DIR$/data/viagens.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/viagens.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/viagens.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.h" beforeDir="false" afterPath="$PROJECT_DIR$/functions.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structs.h" beforeDir="false" afterPath="$PROJECT_DIR$/structs.h" afterDir="false" />
@@ -60,7 +65,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LP_TP_2k21" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Exercicios" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -70,11 +75,6 @@
   </component>
   <component name="RunManager">
     <configuration name="PortoPontos" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PortoPontos" TARGET_NAME="PortoPontos" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PortoPontos" RUN_TARGET_NAME="PortoPontos">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -122,7 +122,35 @@
       <workItem from="1640706850355" duration="12829000" />
       <workItem from="1640793722563" duration="19437000" />
       <workItem from="1640817332542" duration="2439000" />
-      <workItem from="1640874284708" duration="2000" />
+      <workItem from="1640874284708" duration="3451000" />
+      <workItem from="1641049925308" duration="24890000" />
+      <workItem from="1641205672847" duration="5013000" />
+      <workItem from="1641383795784" duration="1532000" />
+      <workItem from="1641562658280" duration="15339000" />
+      <workItem from="1641579934966" duration="8382000" />
+      <workItem from="1641592393783" duration="6359000" />
+      <workItem from="1641652383419" duration="2900000" />
+      <workItem from="1641666138777" duration="9018000" />
+      <workItem from="1641738468393" duration="7015000" />
+      <workItem from="1641769468288" duration="2064000" />
+      <workItem from="1641771760710" duration="1254000" />
+      <workItem from="1641773423542" duration="51000" />
+      <workItem from="1641825039077" duration="11247000" />
+      <workItem from="1641838806676" duration="2845000" />
+      <workItem from="1641841683203" duration="13162000" />
+      <workItem from="1641903000986" duration="5270000" />
+      <workItem from="1641910046720" duration="2417000" />
+      <workItem from="1641912512736" duration="412000" />
+      <workItem from="1641912939381" duration="4329000" />
+      <workItem from="1641923054683" duration="5449000" />
+      <workItem from="1641928591322" duration="4751000" />
+      <workItem from="1641988246112" duration="18000000" />
+      <workItem from="1642020100184" duration="10227000" />
+      <workItem from="1642080393750" duration="21378000" />
+      <workItem from="1642161785473" duration="619000" />
+      <workItem from="1642162554859" duration="4445000" />
+      <workItem from="1642174968961" duration="81000" />
+      <workItem from="1642450359034" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1637875552518</created>
@@ -145,7 +173,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638448701376</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update Cidades e Viagens, not fully working yet">
+      <created>1640874402266</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640874402266</updated>
+    </task>
+    <task id="LOCAL-00005" summary="29.12">
+      <created>1640874476481</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640874476481</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +210,8 @@
     <MESSAGE value="Second commit" />
     <MESSAGE value="insert cidades working&#10;print cidade not working" />
     <MESSAGE value="Update Cidades e Viagens, not fully working yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Cidades e Viagens, not fully working yet" />
+    <MESSAGE value="29.12" />
+    <option name="LAST_COMMIT_MESSAGE" value="29.12" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

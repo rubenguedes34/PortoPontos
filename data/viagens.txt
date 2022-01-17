@@ -1,3 +1,4 @@
-Numero de Viagens: 2 
-Id: 1, Nome: Viagem1, Cidades visitadas: 0 1 2 3 4 5, Data: 20/11/2021
-Id: 2, Nome: Viagem2, Cidades visitadas: 0 2 3 1 5 4, Data: 21/11/2021
+Cliente: Cliente1, Id: 1, Nome: Viagem1, Data: 20/11/2021, Cidades: 5
+Cliente: Cliente2, Id: 2, Nome: Viagem2, Data: 21/11/2021, Cidades: 5
+Cliente: Cliente3, Id: 3, Nome: Viagem3, Data: 22/11/2021, Cidades: 5
+Cliente: Cliente3, Id: 4, Nome: Viagem4, Data: 31/11/2021, Cidades: 5

@@ -4,8 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 #define MAX100 100
-#define MAX50 50
-#define MAXCITIES 10
 
 typedef struct data{
     int dia;
@@ -20,51 +18,57 @@ typedef struct coordenadas{
 
 ////////////////////////     CIDADES    ////////////////////////
 
-/*typedef struct pontos_interesse{
-    char pontos[MAX50];   //array pontosInt interesse
-}Pol;*/
+typedef struct pontos_interesse{
+    int id_cid;
+    char *nome_local;
+}Pol;
+
+typedef struct ll_pol{
+    Pol *ppol;
+    int n_pontos;
+    int totalpontos;
+}Pol_dynarray;
 
 typedef struct cidades{
     int ID;
-    char *pnomecidade;
-    char *descricao;           // array descricoes
+    char *nomecidade;
+    char *descricao;
     COORDENADAS coordenadas;
-    char *pontosInt;    // lista pontosInt interesse
+    Pol_dynarray pontosInt;       //pointer para Pol
 }CIDADES;
 
 typedef struct classcidade{
-    char nome[MAX100];
     CIDADES *pointercid;
-    int totalcidades;       //size
+    int n_cidades;      // cidades visitadas
+    int totalcidades;       //size array
 }CLASSCIDADES_DYNARRAY;
 
 ////////////////////////     VIAGENS    ////////////////////////
 
 typedef struct viagens{
     int id;
-    char *pnomeviagem;
-    char *cidades_a_visitar;   //ID's das cidades que cliente pretende visitar
+    char *nomeviagem;
     DATA dataviagem;
+    CLASSCIDADES_DYNARRAY cidades_visitadas;
 }VIAGENS;
 
 typedef struct classviagens{
-    char name[MAX100];
     VIAGENS *pointerviag;
-    int totalviagens;   //size
+    int n_viagens;      // viagens realizadas
+    int totalviagens;   //size array
 }CLASSVIAGENS_DYNARRAY;
 
 ////////////////////////     CLIENTES    ////////////////////////
 
 typedef struct historico_clientes{
-    VIAGENS *viagem;
-    //DATA data_inicio;
+    char *nome_viagem;
+    DATA data_inicio;
     DATA data_fim;
-    //char *pontos;
     struct historico_clientes *pnext;
 }H_Clientes;
 
 typedef struct ll_historico_clientes{
-    int nr_Historicos;
+    int nr_historico;
     H_Clientes *pointerhc;
 }LL_H_Clientes;
 
@@ -73,9 +77,9 @@ typedef struct cliente{
     char *nome;
     int NIF;
     char *email;
+    CLASSVIAGENS_DYNARRAY viagens;        //viagens realizadas por cada cliente
     LL_H_Clientes *hclientes;
-    //VIAGENS viagens;    // array dinamico para registar viagens realizadas
-    struct cliente *pnext; //LL clientes
+    struct cliente *pnext;
 }CLIENTE;
 
 typedef struct classcliente{
